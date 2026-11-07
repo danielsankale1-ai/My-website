@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Projects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DANIEL SANKALE PORTFOLIO</h1>
+        <nav>
+            <a href="index.html">HOME</a> |
+            <a href="about.html">ABOUT</a> |
+            <a href="portfolio.html">PORTFOLIO</a> |
+            <a href="projects.html" class="active">MY PROJECTS</a> |
+            <a href="skills.html">SKILLS</a> |
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <span class="eyebrow">Featured Work</span>
+            <h2>MY PROJECTS</h2>
+            <p>These projects reflect my creativity, technical learning, and commitment to building practical ICT skills. From digital design to technical support and web work, each project represents my growth as a student and future professional.</p>
+        </section>
+
+        <div class="project-grid">
+            <article class="project-card">
+                <span class="project-tag">Poster Design</span>
+                <img src="graphic design.jpg" alt="Poster Design Project">
+                <h3>Creative Poster Design</h3>
+                <p>I designed a visually strong poster using colors, layout, and typography to communicate information clearly and attractively.</p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-tag">Web Design</span>
+                <img src="web design.jpg" alt="Website Design Project">
+                <h3>Responsive Website Design</h3>
+                <p>I created a clean, modern website layout focused on easy navigation, good structure, and professional digital presentation.</p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-tag">Video Editing</span>
+                <img src="video editting.jpeg" alt="Video Editing Project">
+                <h3>Video Editing Project</h3>
+                <p>I edited promotional and informational content using visual transitions and storytelling techniques to make the message more engaging.</p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-tag">Networking</span>
+                <img src="Networking.png" alt="Networking Project">
+                <h3>Network Setup Support</h3>
+                <p>This project involved understanding networking concepts, equipment setup, and troubleshooting for better communication flow.</p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-tag">Digital Content</span>
+                <img src="ict.jpg" alt="ICT Project">
+                <h3>ICT Learning Portfolio</h3>
+                <p>I organized digital resources and created content that reflects my understanding of ICT tools, systems, technology, and digital communication.</p>
+            </article>
+
+            <article class="project-card">
+                <span class="project-tag">Presentation</span>
+                <img src="profile.jpeg" alt="Portfolio Presentation">
+                <h3>Personal Portfolio Presentation</h3>
+                <p>I built a personal presentation portfolio to showcase my skills, achievements, and goals in a professional and attractive way.</p>
+            </article>
+        </div>
+
+        <section class="poster-gallery-section">
+            <div class="section-heading">
+                <span class="eyebrow accent">Poster Design Gallery</span>
+                <h3>My Poster Collection</h3>
+            </div>
+
+            <div class="poster-gallery">
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="DECLARATION.png" data-title="Declaration Poster" data-caption="An official declaration poster designed for clear communication and strong visual presentation.">
+                        <img src="DECLARATION.png" alt="Declaration poster design">
+                        <span class="poster-caption">Major Declaration Poster</span>
+                    </button>
+                </article>
+
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="declaration2.png" data-title="Declaration Poster 2" data-caption="A second declaration-themed design created with a clean layout and readable message structure.">
+                        <img src="declaration2.png" alt="Second declaration poster design">
+                        <span class="poster-caption">Declaration Poster 2</span>
+                    </button>
+                </article>
+
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="FELIX.MCA.png" data-title="Felix MCA Poster" data-caption="A promotional poster for Felix MCA, designed to attract attention and communicate the message effectively.">
+                        <img src="FELIX.MCA.png" alt="Felix MCA poster design">
+                        <span class="poster-caption">Felix MCA Poster</span>
+                    </button>
+                </article>
+
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="Fred Pere.png" data-title="Fred Pere Poster" data-caption="A simple, bold poster layout designed to present the subject clearly and professionally.">
+                        <img src="Fred Pere.png" alt="Fred Pere poster design">
+                        <span class="poster-caption">Fred Pere Graduation Poster</span>
+                    </button>
+                </article>
+
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="KADIPO FOR MCA.png" data-title="Kadipo For MCA Poster" data-caption="A campaign-style poster designed using balanced typography, colors, and visual hierarchy.">
+                        <img src="KADIPO FOR MCA.png" alt="Kadipo for MCA poster design">
+                        <span class="poster-caption">Kadipo For MCA Poster</span>
+                    </button>
+                </article>
+
+                <article class="poster-card">
+                    <button class="poster-trigger" type="button" data-image="reminder.png" data-title="Reminder Poster" data-caption="A reminder poster focused on clarity, visibility, and quick message recognition for the audience.">
+                        <img src="reminder.png" alt="Reminder poster design">
+                        <span class="poster-caption">Reminder for FELIX KADIPO MCA Poster</span>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <div class="highlight-box project-summary">
+            <p>My projects reflect my ability to work creatively, learn technology quickly, and present ideas clearly. I am proud of the work I have done so far and continue to improve through every new project and challenge.</p>
+        </div>
+    </main>
+
+    <div class="poster-modal" id="posterModal" aria-hidden="true">
+        <div class="poster-modal-content">
+            <button class="poster-close" type="button" aria-label="Close poster view">&times;</button>
+            <img id="modalPosterImage" src="" alt="Poster preview">
+            <div class="poster-modal-info">
+                <h4 id="modalPosterTitle">Poster Title</h4>
+                <p id="modalPosterCaption">Poster description</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy2025 Daniel Sankale | All Rights Reserved
+    </footer>
+
+    <script>
+        const posterButtons = document.querySelectorAll('.poster-trigger');
+        const posterModal = document.getElementById('posterModal');
+        const modalImage = document.getElementById('modalPosterImage');
+        const modalTitle = document.getElementById('modalPosterTitle');
+        const modalCaption = document.getElementById('modalPosterCaption');
+        const closeButton = document.querySelector('.poster-close');
+
+        posterButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const imageSrc = button.dataset.image;
+                const title = button.dataset.title;
+                const caption = button.dataset.caption;
+
+                modalImage.src = imageSrc;
+                modalImage.alt = title;
+                modalTitle.textContent = title;
+                modalCaption.textContent = caption;
+                posterModal.classList.add('show');
+                posterModal.setAttribute('aria-hidden', 'false');
+            });
+        });
+
+        const closePosterModal = () => {
+            posterModal.classList.remove('show');
+            posterModal.setAttribute('aria-hidden', 'true');
+        };
+
+        closeButton.addEventListener('click', closePosterModal);
+
+        posterModal.addEventListener('click', (event) => {
+            if (event.target === posterModal) {
+                closePosterModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && posterModal.classList.contains('show')) {
+                closePosterModal();
+            }
+        });
+    </script>
+</body>
+</html>
