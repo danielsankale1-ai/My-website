@@ -65,49 +65,67 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     (function () {
-      emailjs.init({
-        publicKey: 'YOUR_PUBLIC_KEY'
-      });
+        const emailConfig = {
+          publicKey: 'EwExcqcSxwUZrfIkC',
+          serviceId: 'service_qbx6fwu',
+          templateId: 'template_yi6tw11'
+        };
 
-      const form = document.getElementById('contactForm');
-      const statusBox = document.getElementById('form-status');
+        const hasPlaceholder = (value) => !value || value.includes('YOUR_');
 
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
+        if (hasPlaceholder(emailConfig.publicKey) || hasPlaceholder(emailConfig.serviceId) || hasPlaceholder(emailConfig.templateId)) {
+          const form = document.getElementById('contactForm');
+          const statusBox = document.getElementById('form-status');
 
-        const name = form.elements.from_name.value.trim();
-        const email = form.elements.from_email.value.trim();
-        const message = form.elements.message.value.trim();
+          if (form && statusBox) {
+            statusBox.textContent = 'EmailJS is not configured yet. Add your public key, service ID, and template ID in this script.';
+            statusBox.classList.add('show', 'error');
+          }
 
-        if (!name || !email || !message) {
-          statusBox.textContent = 'Please fill in all fields before sending.';
-          statusBox.classList.add('show', 'error');
           return;
         }
 
-        statusBox.textContent = 'Sending your message...';
-        statusBox.classList.add('show');
-        statusBox.classList.remove('error');
-
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-          from_name: name,
-          from_email: email,
-          message: message,
-          to_email: 'danielsankale1@email.com'
-        })
-        .then(function () {
-          statusBox.textContent = 'Your message was sent successfully! I will get back to you soon.';
-          statusBox.classList.remove('error');
-          form.reset();
-        })
-        .catch(function () {
-          statusBox.textContent = 'Something went wrong. Please check your EmailJS setup and try again.';
-          statusBox.classList.add('error');
+        emailjs.init({
+          publicKey: emailConfig.publicKey
         });
-      });
-    })();
-  </script>
-</body>
-</html>
-</body>
-</html>
+
+        const form = document.getElementById('contactForm');
+        const statusBox = document.getElementById('form-status');
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const name = form.elements.from_name.value.trim();
+          const email = form.elements.from_email.value.trim();
+          const message = form.elements.message.value.trim();
+
+          if (!name || !email || !message) {
+            statusBox.textContent = 'Please fill in all fields before sending.';
+            statusBox.classList.add('show', 'error');
+            return;
+          }
+
+          statusBox.textContent = 'Sending your message...';
+          statusBox.classList.add('show');
+          statusBox.classList.remove('error');
+
+          emailjs.send(emailConfig.serviceId, emailConfig.templateId, {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_email: 'danielsankale1@email.com'
+          })
+          .then(function () {
+            statusBox.textContent = 'Your message was sent successfully! I will get back to you soon.';
+            statusBox.classList.remove('error');
+            form.reset();
+          })
+          .catch(function () {
+            statusBox.textContent = 'Something went wrong. Please check your EmailJS setup and try again.';
+            statusBox.classList.add('error');
+          });
+        });
+      })();
+    </script>
+  </body>
+  </html>
