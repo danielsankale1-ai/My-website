@@ -120,8 +120,10 @@
             statusBox.classList.remove('error');
             form.reset();
           })
-          .catch(function () {
-            statusBox.textContent = 'Something went wrong. Please check your EmailJS setup and try again.';
+          .catch(function (error) {
+            console.error('EmailJS failed:', error);
+            const errorText = error && error.text ? error.text : 'EmailJS configuration or template is invalid.';
+            statusBox.textContent = 'Something went wrong: ' + errorText;
             statusBox.classList.add('error');
           });
         });
